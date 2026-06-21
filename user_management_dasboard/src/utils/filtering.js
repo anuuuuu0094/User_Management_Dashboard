@@ -1,9 +1,11 @@
 export const filterUsers = (users, filters) => {
   return users.filter((user) => {
     return Object.entries(filters).every(([key, value]) => {
-      if (!value) return true;
+      if (!value?.trim()) return true;
 
-      return user[key]?.toLowerCase().includes(value.toLowerCase());
+      return String(user[key] || "")
+        .toLowerCase()
+        .includes(value.toLowerCase());
     });
   });
 };
