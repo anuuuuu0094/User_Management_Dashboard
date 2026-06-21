@@ -1,18 +1,18 @@
+import DashboardLayout from "../components/layout/DashboardLayout";
+
 function Dashboard() {
   return (
-    <div className="min-h-screen p-6">
-      <div className="mx-auto max-w-7xl">
-        <div className="card p-6">
-          <h1 className="text-3xl font-bold text-primary-700">
-            User Management Dashboard
-          </h1>
+    <DashboardLayout>
+      <div className="card p-6">
+        <h2 className="text-2xl font-semibold text-slate-800">
+          Dashboard Ready
+        </h2>
 
-          <p className="mt-2 text-slate-600">
-            Loading project structure...
-          </p>
-        </div>
+        <p className="mt-2 text-slate-600">
+          Hooks and reusable components configured successfully.
+        </p>
       </div>
-    </div>
+    </DashboardLayout>
   );
 }
 
