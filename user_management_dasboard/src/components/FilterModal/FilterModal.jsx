@@ -4,7 +4,7 @@ import Modal from "../common/Modal";
 import Button from "../common/Button";
 import Input from "../common/Input";
 
-import { DEPARTMENTS } from "../../constants/departments";
+import { DEPARTMENTS } from "../../constants/department";
 
 function FilterModal({ isOpen, onClose, filters, onApply, onReset }) {
   const [localFilters, setLocalFilters] = useState(filters);
