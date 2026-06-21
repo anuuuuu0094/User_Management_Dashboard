@@ -1,12 +1,25 @@
 import api from "../api/axios";
 
-export const fetchUsers = () => api.get("/users");
+export const fetchUsers = async () => {
+  const response = await api.get("/users");
 
-export const createUser = (payload) =>
-  api.post("/users", payload);
+  return response.data;
+};
 
-export const updateUser = (id, payload) =>
-  api.put(`/users/${id}`, payload);
+export const createUser = async (payload) => {
+  const response = await api.post("/users", payload);
 
-export const deleteUser = (id) =>
-  api.delete(`/users/${id}`);
+  return response.data;
+};
+
+export const updateUser = async (id, payload) => {
+  const response = await api.put(`/users/${id}`, payload);
+
+  return response.data;
+};
+
+export const deleteUser = async (id) => {
+  await api.delete(`/users/${id}`);
+
+  return id;
+};
