@@ -1,4 +1,4 @@
-import { PAGINATION_OPTIONS } from "../../constants/paginationOptions";
+import { PAGINATION_OPTIONS } from "../../constants/paginationOption";
 
 function Pagination({
   currentPage,
