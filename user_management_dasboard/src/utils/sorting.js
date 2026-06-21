@@ -1,10 +1,13 @@
-export const sortUsers = (users, key, direction) => {
-  return [...users].sort((a, b) => {
-    const first = a[key]?.toLowerCase();
-    const second = b[key]?.toLowerCase();
+export const sortUsers = (users, sortBy, direction) => {
+  if (!sortBy) return users;
 
-    return direction === "asc"
-      ? first.localeCompare(second)
-      : second.localeCompare(first);
+  return [...users].sort((a, b) => {
+    const first = String(a[sortBy] || "").toLowerCase();
+
+    const second = String(b[sortBy] || "").toLowerCase();
+
+    const comparison = first.localeCompare(second);
+
+    return direction === "asc" ? comparison : -comparison;
   });
 };
